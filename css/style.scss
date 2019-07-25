@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  background: silver;
+  width: 1368px;
+  font-family: "Roboto Condensed";
+  line-height: 1;
+  margin: 0 auto;
+}
+ul,
+li {
+  display: block;
+  padding: 0;
+  margin-bottom: 0;
+}
+p {
+  margin: 0;
+}
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+//header
+header {
+  background: #389ef2;
+  color: #fafafa;
+}
+.container {
+  width: 1140px;
+
+  margin: 0 auto;
+}
+.nav {
+  padding: 9px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  padding: 9px 12px 9px 0;
+  border-right: 2px solid #ffc107;
+}
+.logo a {
+  display: flex;
+  align-items: center;
+  .logo-img {
+    width: 25px;
+    height: 33px;
+    margin-right: 12px;
+  }
+  p {
+    font-style: italic;
+    color: #fafafa;
+    font-size: 25px;
+    font-weight: 700;
+  }
+}
+.logo-desc {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 10px;
+  user-select: none;
+}
+
+.navbar ul {
+  display: flex;
+}
+.navbar__item {
+  margin-right: 50px;
+  &:last-child {
+    margin-right: 0;
+  }
+  a {
+    color: #fafafa;
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+  i {
+    font-size: 22px;
+  }
+}
+
+.bg-brand {
+  background: url(../img/bg-brand.png) no-repeat center;
+  background-size: cover;
+  min-height: 495px;
+}
+.brand-center {
+  text-align: center;
+  padding-top: 140px;
+  font-style: italic;
+  font-size: 122px;
+  font-weight: 400;
+  user-select: none;
+}
