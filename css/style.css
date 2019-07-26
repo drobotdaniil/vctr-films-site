@@ -13,13 +13,6 @@
 }
 
 @font-face {
-  font-family: "Roboto Condensed";
-  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Proxima Nova";
   src: url("../fonts/FontsFree-Net-Proxima-Nova-Bold.otf") format("truetype");
   font-weight: normal;
@@ -221,9 +214,8 @@ header {
 }
 
 .title {
-  font-style: bold;
   font-size: 29px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .btn-views {
@@ -416,8 +408,118 @@ header {
 }
 
 .popular-body {
-  height: 705px;
   background: #fafafa;
+  padding: 38px 0;
+}
+
+.popular-body .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pop-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 60px;
+}
+
+.pop-item:last-child {
+  margin-bottom: 0;
+}
+
+.pop-item__rating {
+  margin: 0 22px;
+}
+
+.pop-item-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 840px;
+  text-align: justify;
+}
+
+.pop-title {
+  color: #389ef2;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.pop-year {
+  color: #010b13;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.pop-desc {
+  color: #4b555d;
+  font-size: 18px;
+  margin-bottom: 21px;
+}
+
+.pop-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pop-actions a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #010b13;
+  margin-right: 40px;
+}
+
+.pop-actions a:last-child {
+  margin-right: 0;
+}
+
+.pop-actions a .pop-score {
+  font-family: "Proxima Nova";
+  font-size: 17px;
+  font-weight: 700;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  padding-top: 2px;
+}
+
+.pop-actions a .pop-score:hover {
+  color: #f33232;
+}
+
+.pop-actions a span {
+  margin: 0 7px;
+  color: #010b13;
+}
+
+.pop-actions a img {
+  width: 24px;
+}
+
+.btn-readmore {
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 700;
+  color: #389ef2 !important;
+  margin-left: 360px;
 }
 
 .footer {
