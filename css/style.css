@@ -289,12 +289,12 @@ header {
 .coming-body {
   padding: 16px 0;
   background: #fafafa;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin: 0 auto;
+}
+
+.coming-body .container {
+  width: 1300px;
+  padding-left: 90px;
 }
 
 .item {
@@ -306,7 +306,13 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 220px;
+  margin-right: 135px;
+  outline: none;
+  cursor: pointer;
+}
+
+.item:last-child {
+  margin-right: 0;
 }
 
 .item__title,
@@ -315,6 +321,42 @@ header {
   font-style: bold;
   font-weight: 700;
   padding-left: 5px;
+  min-width: 220px;
+}
+
+.item__img {
+  position: relative;
+  border-radius: 3px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.item__img:hover {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.item__img .movie-type,
+.item__img .movie-gradeless {
+  position: absolute;
+  width: 37px;
+  top: 10px;
+  left: 10px;
+}
+
+.item__img .movie-gradeless {
+  left: auto;
+  right: -40px;
+  width: 35px;
+  top: 5px;
+}
+
+.movie-img {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 215px;
+  height: 330px;
 }
 
 .item__actions {
@@ -328,15 +370,25 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 9px;
+  margin-left: 10px;
   padding: 0 9px;
 }
 
 .action {
   margin-right: 28px;
-  text-align: center;
   color: #010b13;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .action:hover {

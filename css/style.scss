@@ -219,14 +219,25 @@ header {
 .coming-body {
   padding: 16px 0;
   background: #fafafa;
-  display: flex;
-  justify-content: space-between;
+  margin: 0 auto;
+  // padding-left: 50px;
+  .container{
+    width: 1300px;
+    padding-left: 90px;
+  }
 }
+
 .item{
   display: flex;
   color: #010b13;
   flex-direction: column;
-  width: 220px;
+  // max-width: 220px;
+  margin-right: 135px;
+  outline: none;
+  cursor: pointer;
+  &:last-child{
+    margin-right: 0;
+  }
 }
 .item__title,
 .item__year{
@@ -234,19 +245,52 @@ header {
   font-style: bold;
   font-weight: 700;
   padding-left: 5px;
+  min-width: 220px;
+}
+.item__img{
+  position: relative;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  &:hover{
+    filter: brightness(50%);
+  }
+  .movie-type,
+  .movie-gradeless{
+    position: absolute;
+    width: 37px;
+    top: 10px;
+    left: 10px;
+  }
+  .movie-gradeless{
+    left: auto;
+    right: -40px;
+    width: 35px;
+    top: 5px;
+  }
+}
+.movie-img{
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 215px;
+  height: 330px;
+  
 }
 .item__actions{
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   margin-top: 9px;
+  margin-left: 10px;
   padding: 0 9px;
 }
 .action{
   margin-right: 28px;
-  text-align: center;
   color: #010b13;
   transition: 0.3s ease; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &:hover{
     color:rgb(243, 50, 50);
   }
