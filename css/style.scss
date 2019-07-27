@@ -16,6 +16,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Gotham Bold";
+  src: url("../fonts/Gotham_Bold/Gotham_Bold.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   width: 1340px;
   font-family: "Roboto Condensed";
@@ -238,6 +244,7 @@ header {
   font-weight: 700;
   padding-left: 5px;
   min-width: 220px;
+  margin-bottom: 5px;
 }
 .item__img {
   position: relative;
@@ -288,7 +295,7 @@ header {
   &:last-child {
     margin-right: 0;
   }
-  .score {
+  .count {
     font-family: "Proxima Nova";
     font-size: 13px;
     margin-bottom: 14px;
@@ -306,26 +313,44 @@ header {
 }
 .popular-body {
   background: #fafafa;
-  padding: 38px 0;
-  .container{
+  padding-top: 42px;
+  .container {
     display: flex;
     flex-direction: column;
   }
 }
 .pop-item {
-  display: flex;
+  display: flex !important;
   align-items: center;
   margin-bottom: 60px;
-  &:last-child{
+  outline: none;
+  &:last-child {
     margin-bottom: 0;
   }
 }
 .pop-item__rating {
   margin: 0 22px;
+  position: relative;
+}
+.rating {
+  position: absolute;
+  font-family: "Gotham Bold";
+  color: #22ca71;
+  font-size: 28px;
+  font-weight: 700;
+  top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+.pop-item__img,
+.pop-item__rating {
+  display: inline-block;
 }
 .pop-item-desc {
-  display: flex;
+  // display: flex;
   flex-direction: column;
+  display: inline-flex;
+
   width: 840px;
   text-align: justify;
 }
@@ -356,7 +381,7 @@ header {
   &:last-child {
     margin-right: 0;
   }
-  .pop-score {
+  .pop-count {
     font-family: "Proxima Nova";
     font-size: 17px;
     font-weight: 700;
