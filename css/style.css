@@ -284,20 +284,18 @@ header {
   transition: 0.6s ease;
 }
 
-.card-view:hover,
-.list-view:hover {
-  opacity: 1;
-}
-
 .card-view:last-child,
 .list-view:last-child {
   margin-right: 0;
 }
 
+.active-view {
+  opacity: 1;
+}
+
 .coming-body {
   padding: 16px 0;
   background: #fafafa;
-  margin: 0 auto;
 }
 
 .coming-body .container {
@@ -313,8 +311,8 @@ header {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: relative;
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
+  -webkit-transform: scale(0.995);
+          transform: scale(0.995);
 }
 
 .act {
@@ -336,10 +334,6 @@ header {
   max-width: 220px;
   margin-right: 135px;
   outline: none;
-}
-
-.item:last-child {
-  margin-right: 0;
 }
 
 .item__title,
@@ -437,6 +431,11 @@ header {
   height: 20px;
 }
 
+.action span {
+  margin: 0 7px;
+  color: #010b13;
+}
+
 .popular {
   z-index: 99999;
   position: relative;
@@ -472,9 +471,14 @@ header {
   margin-bottom: 0;
 }
 
-.pop-item__rating {
+.pop-item__rating,
+.item__rating {
   margin: 0 22px;
   position: relative;
+}
+
+.visibility {
+  display: none;
 }
 
 .rating {
@@ -489,9 +493,10 @@ header {
           transform: translate(-50%, -50%);
 }
 
-.pop-item__img img {
+.pop-img {
   width: 104px;
   height: 157px;
+  border-radius: 7px;
 }
 
 .pop-item__img,
@@ -508,7 +513,6 @@ header {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 840px;
-  text-align: justify;
 }
 
 .pop-title {
@@ -524,10 +528,18 @@ header {
   margin-bottom: 15px;
 }
 
-.pop-desc {
+.pop-desc,
+.item-desc {
   color: #4b555d;
   font-size: 18px;
   margin-bottom: 21px;
+  text-align: justify;
+  line-height: 1.13;
+}
+
+.item-desc {
+  width: 840px;
+  margin-top: 15px;
 }
 
 .pop-actions {
@@ -551,7 +563,16 @@ header {
   margin-right: 0;
 }
 
-.pop-actions a .pop-count {
+.pop-actions a span {
+  margin: 0 7px;
+  color: #010b13;
+}
+
+.pop-actions a img {
+  width: 24px;
+}
+
+.pop-count {
   font-family: "Proxima Nova";
   font-size: 17px;
   font-weight: 700;
@@ -560,17 +581,8 @@ header {
   padding-top: 2px;
 }
 
-.pop-actions a .pop-count:hover {
+.pop-count:hover {
   color: #f33232;
-}
-
-.pop-actions a span {
-  margin: 0 7px;
-  color: #010b13;
-}
-
-.pop-actions a img {
-  width: 24px;
 }
 
 .btn-readmore {
