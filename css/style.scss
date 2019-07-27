@@ -22,6 +22,9 @@
   font-weight: normal;
   font-style: normal;
 }
+
+$hover-effect: rgb(243, 50, 50);
+$main-color: #010b13;
 body {
   width: 1364px;
   font-family: "Roboto Condensed";
@@ -165,7 +168,7 @@ header {
 //coming soon section
 .coming,
 .popular {
-  background: #010b13;
+  background: $main-color;
   color: #fafafa;
 }
 .coming-header .container {
@@ -202,7 +205,7 @@ header {
   }
   &:hover {
     background: #fafafa;
-    color: black;
+    color: $main-color;
   }
 }
 .card-view,
@@ -226,19 +229,32 @@ header {
   margin: 0 auto;
   // padding-left: 50px;
   .container {
-    width: 1300px;
-    padding-left: 90px;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 20px;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    white-space: nowrap;
+    transition: all 0.2s;
+    position: relative;
+    transform: scale(0.99);
+    // will-change: transform;
   }
+  
 }
-
+.act {
+  cursor: grabbing !important;
+  transform: scale(1) !important;
+}
 .item {
   display: flex;
-  color: #010b13;
+  color: $main-color;
   flex-direction: column;
-  // max-width: 220px;
+  max-width: 220px;
   margin-right: 135px;
   outline: none;
-  cursor: pointer;
+  // cursor: pointer;
   &:last-child {
     margin-right: 0;
   }
@@ -263,18 +279,18 @@ header {
   .movie-gradeless {
     position: absolute;
     width: 37px;
-    top: 10px;
+    top: 18px;
     left: 10px;
   }
   .movie-gradeless {
     left: auto;
-    right: -40px;
+    right: 13px;
     width: 35px;
-    top: 5px;
+    top: 13px;
   }
 }
 .movie-img {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   width: 215px;
@@ -285,18 +301,18 @@ header {
   align-items: flex-end;
   justify-content: space-between;
   margin-top: 9px;
-  margin-left: 10px;
+  // margin-left: 10px;
   padding: 0 9px;
 }
 .action {
   margin-right: 28px;
-  color: #010b13;
+  color: $main-color;
   transition: 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   &:hover {
-    color: rgb(243, 50, 50);
+    color: $hover-effect;
   }
   &:last-child {
     margin-right: 0;
@@ -370,7 +386,7 @@ header {
   margin-bottom: 3px;
 }
 .pop-year {
-  color: #010b13;
+  color: $main-color;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -379,6 +395,10 @@ header {
   color: #4b555d;
   font-size: 18px;
   margin-bottom: 21px;
+  //if scroll is needed
+
+  // overflow: auto; 
+  // height: 57px;
 }
 .pop-actions {
   display: flex;
@@ -386,7 +406,7 @@ header {
 .pop-actions a {
   display: flex;
   align-items: center;
-  color: #010b13;
+  color: $main-color;
   margin-right: 40px;
   &:last-child {
     margin-right: 0;
@@ -398,23 +418,29 @@ header {
     transition: 0.4s ease;
     padding-top: 2px;
     &:hover {
-      color: rgb(243, 50, 50);
+      color: $hover-effect;
     }
   }
   span {
     margin: 0 7px;
-    color: #010b13;
+    color: $main-color;
   }
   img {
     width: 24px;
   }
 }
 .btn-readmore {
-  text-decoration: underline;
+  border-bottom: 1px solid #389ef2;
   font-size: 18px;
   font-weight: 700;
   color: #389ef2 !important;
   margin-left: 360px;
+  transition: 0.4s ease !important;
+  &:hover{
+    color:$hover-effect !important;
+    border-bottom: 1px solid $hover-effect;
+    // border-bottom: none;
+  }
 }
 //arrows
 .slick-prev {
@@ -468,7 +494,7 @@ header {
 } 
 //foooter
 .footer {
-  background: #010b13;
+  background: $main-color;
   text-align: center;
   padding-top: 36px;
   padding-bottom: 27px;

@@ -270,7 +270,7 @@ header {
 
 .btn__item:hover {
   background: #fafafa;
-  color: black;
+  color: #010b13;
 }
 
 .card-view,
@@ -301,8 +301,27 @@ header {
 }
 
 .coming-body .container {
-  width: 1300px;
-  padding-left: 90px;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  white-space: nowrap;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: relative;
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.act {
+  cursor: -webkit-grabbing !important;
+  cursor: grabbing !important;
+  -webkit-transform: scale(1) !important;
+          transform: scale(1) !important;
 }
 
 .item {
@@ -314,9 +333,9 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: 220px;
   margin-right: 135px;
   outline: none;
-  cursor: pointer;
 }
 
 .item:last-child {
@@ -349,19 +368,19 @@ header {
 .item__img .movie-gradeless {
   position: absolute;
   width: 37px;
-  top: 10px;
+  top: 18px;
   left: 10px;
 }
 
 .item__img .movie-gradeless {
   left: auto;
-  right: -40px;
+  right: 13px;
   width: 35px;
-  top: 5px;
+  top: 13px;
 }
 
 .movie-img {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   width: 215px;
@@ -379,7 +398,6 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 9px;
-  margin-left: 10px;
   padding: 0 9px;
 }
 
@@ -556,11 +574,18 @@ header {
 }
 
 .btn-readmore {
-  text-decoration: underline;
+  border-bottom: 1px solid #389ef2;
   font-size: 18px;
   font-weight: 700;
   color: #389ef2 !important;
   margin-left: 360px;
+  -webkit-transition: 0.4s ease !important;
+  transition: 0.4s ease !important;
+}
+
+.btn-readmore:hover {
+  color: #f33232 !important;
+  border-bottom: 1px solid #f33232;
 }
 
 .slick-prev {
