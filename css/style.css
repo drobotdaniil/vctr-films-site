@@ -607,23 +607,41 @@ header {
 
 .btn-read {
   margin-left: 380px;
+  border-bottom: 1px solid #389ef2;
+  font-size: 18px;
+  font-weight: 700;
+  color: #389ef2 !important;
+  -webkit-transition: 0.4s ease !important;
+  transition: 0.4s ease !important;
+}
+
+.btn-read:hover {
+  color: #f33232 !important;
+  border-bottom: 1px solid #f33232;
 }
 
 .up-arrow,
-.down-arrow {
+.down-arrow,
+.up-arrow-pop,
+.down-arrow-pop {
   width: 26px;
   height: 9px;
   position: relative;
-  top: 10px;
+  top: 5px;
   left: 1230px;
   cursor: pointer !important;
 }
 
-.down-arrow {
+.down-arrow,
+.down-arrow-pop {
   top: auto;
   bottom: 30px;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.down-arrow-pop {
+  bottom: 50px;
 }
 
 .footer {

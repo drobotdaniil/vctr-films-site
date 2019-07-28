@@ -85,8 +85,11 @@ slider2.addEventListener('mousemove', (e) => {
     slider2.scrollTop = scrollTop - walk2;
     // console.log(walk);
 });
-downArrow.addEventListener("click", (e) => {
-    slider2.scrollTop = scrollTop2 + "10px";
+downArrow.addEventListener("mousedown", (e) => {
+    slider2.scrollTop += 70;
+});
+upArrow.addEventListener("mousedown", (e) => {
+    slider2.scrollTop -= 70;
 });
 // slider popular
 const slider3 = document.querySelector('.slider-popular');
@@ -120,6 +123,8 @@ const slider4 = document.querySelector('.slider-popular2');
 let isDown4 = false;
 let startY2;
 let scrollTop2;
+const upArrowPop = document.querySelector(".up-arrow-pop");
+const downArrowPop = document.querySelector(".down-arrow-pop");
 
 slider4.addEventListener('mousedown', (e) => {
     isDown4 = true;
@@ -142,6 +147,12 @@ slider4.addEventListener('mousemove', (e) => {
     const walk3 = (y - startY2) * 1.5; //scroll-fast
     slider4.scrollTop = scrollTop2 - walk3;
     // console.log(walk);
+});
+downArrowPop.addEventListener("mousedown", (e) => {
+    slider4.scrollTop += 70;
+});
+upArrowPop.addEventListener("mousedown", (e) => {
+    slider4.scrollTop -= 70;
 });
 
 
@@ -172,8 +183,8 @@ const btnRead = document.querySelectorAll(".btn-read");
 listView.addEventListener("click", (e) => {
     cardView.classList.remove("active-view");
     listView.classList.add("active-view");
-    comingBody.style.paddingTop = "38px";
-    comingBody.style.paddingTop = "38px";
+    comingBody.style.paddingTop = "30px";
+    // comingBody.style.paddingTop = "38px";
     comingBodyCont.style.flexDirection = "column";
     comingBodyCont.style.width = "1140px";
     comingBodyCont.style.height = "610px";
@@ -363,6 +374,8 @@ cardViewPop.addEventListener("click", (e) => {
     contPopBody.style.width="100%";
     contPopBody.style.paddingLeft="40px";
     contPopBody.style.paddingRight="20px";
+    upArrowPop.classList.add("visibility");
+    downArrowPop.classList.add("visibility");
    
 
     [].forEach.call(popItem, function(el){
@@ -444,6 +457,8 @@ listViewPop.addEventListener("click", (e) => {
     contPopBody.style.width="1140px";
     contPopBody.style.paddingLeft="0px";
     contPopBody.style.paddingRight="0px";
+    upArrowPop.classList.remove("visibility");
+    downArrowPop.classList.remove("visibility");
     [].forEach.call(popItem, function(el){
         el.style.marginBottom = "60px";
         el.style.marginRight = "0px";
