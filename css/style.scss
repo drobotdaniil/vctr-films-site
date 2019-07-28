@@ -317,11 +317,7 @@ header {
   &:last-child {
     margin-right: 0;
   }
-  .count {
-    font-family: "Proxima Nova";
-    font-size: 13px;
-    margin-bottom: 14px;
-  }
+
   img {
     width: 20px;
     height: 20px;
@@ -331,7 +327,11 @@ header {
     color: $main-color;
   }
 }
-
+.count {
+  font-family: "Proxima Nova";
+  font-size: 13px;
+  margin-bottom: 14px;
+}
 // most popular section
 .popular {
   z-index: 99999;
@@ -361,6 +361,7 @@ header {
   align-items: center;
   margin-bottom: 60px;
   outline: none;
+position: relative;
   &:last-child {
     margin-bottom: 30px;
   }
@@ -435,8 +436,11 @@ header {
   align-items: center;
   color: $main-color;
   margin-right: 40px;
-  &:last-child {
-    margin-right: 0;
+  &:nth-child(4) {
+    margin-right: 0 !important;
+  }
+  &:last-child{
+    margin-right: 0 !important;
   }
 
   span {
@@ -462,13 +466,50 @@ header {
   font-size: 18px;
   font-weight: 700;
   color: #389ef2 !important;
-  margin-left: 360px;
+  margin-left: 405px;
   transition: 0.4s ease !important;
   &:hover{
     color:$hover-effect !important;
     border-bottom: 1px solid $hover-effect;
     // border-bottom: none;
   }
+}
+.btn-read{
+  margin-left: 380px;
+}
+
+// .slider-coming2::before{
+//   content: url("../img/verticali-slider-arrows.svg");
+//   display: block;
+//   width: 26px;
+//   height: 9px;
+//   position: absolute;
+//   cursor: pointer;
+//   right: -1110px;
+// }
+// .slider-coming2::after{
+//   content: url("../img/verticali-slider-arrows.svg");
+//   display: block;
+//   width: 26px;
+//   height: 9px;
+//   position: absolute;
+//   cursor: pointer;
+//   right: -1110px;
+//   transform: rotate(180deg);
+// }
+.up-arrow,
+.down-arrow{
+  width: 26px;
+    height: 9px;
+    position: relative;
+    top:10px;
+    left: 1230px;
+    cursor: pointer !important;
+}
+.down-arrow{
+  top: auto;
+  bottom: 30px;
+  transform: rotate(180deg);
 }
 // //arrows
 // .slick-prev {

@@ -415,12 +415,6 @@ header {
   margin-right: 0;
 }
 
-.action .count {
-  font-family: "Proxima Nova";
-  font-size: 13px;
-  margin-bottom: 14px;
-}
-
 .action img {
   width: 20px;
   height: 20px;
@@ -429,6 +423,12 @@ header {
 .action span {
   margin: 0 7px;
   color: #010b13;
+}
+
+.count {
+  font-family: "Proxima Nova";
+  font-size: 13px;
+  margin-bottom: 14px;
 }
 
 .popular {
@@ -465,6 +465,7 @@ header {
           align-items: center;
   margin-bottom: 60px;
   outline: none;
+  position: relative;
 }
 
 .pop-item:last-child {
@@ -559,8 +560,12 @@ header {
   margin-right: 40px;
 }
 
+.pop-actions a:nth-child(4) {
+  margin-right: 0 !important;
+}
+
 .pop-actions a:last-child {
-  margin-right: 0;
+  margin-right: 0 !important;
 }
 
 .pop-actions a span {
@@ -590,7 +595,7 @@ header {
   font-size: 18px;
   font-weight: 700;
   color: #389ef2 !important;
-  margin-left: 360px;
+  margin-left: 405px;
   -webkit-transition: 0.4s ease !important;
   transition: 0.4s ease !important;
 }
@@ -598,6 +603,27 @@ header {
 .btn-readmore:hover {
   color: #f33232 !important;
   border-bottom: 1px solid #f33232;
+}
+
+.btn-read {
+  margin-left: 380px;
+}
+
+.up-arrow,
+.down-arrow {
+  width: 26px;
+  height: 9px;
+  position: relative;
+  top: 10px;
+  left: 1230px;
+  cursor: pointer !important;
+}
+
+.down-arrow {
+  top: auto;
+  bottom: 30px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .footer {

@@ -55,7 +55,10 @@ slider.addEventListener('mousemove', (e) => {
     slider.scrollLeft = scrollLeft - walk;
     // console.log(walk);
 });
+
 const slider2 = document.querySelector('.slider-coming2');
+const upArrow = document.querySelector(".up-arrow");
+const downArrow = document.querySelector(".down-arrow");
 let isDown2 = false;
 let startY;
 let scrollTop;
@@ -82,34 +85,37 @@ slider2.addEventListener('mousemove', (e) => {
     slider2.scrollTop = scrollTop - walk2;
     // console.log(walk);
 });
-//slider popular
-// const slider3 = document.querySelector('.slider-popular');
-// let isDown3 = false;
-// let startX2;
-// let scrollLeft2;
+downArrow.addEventListener("click", (e) => {
+    slider2.scrollTop = scrollTop2 + "10px";
+});
+// slider popular
+const slider3 = document.querySelector('.slider-popular');
+let isDown3 = false;
+let startX2;
+let scrollLeft2;
 
-// slider3.addEventListener('mousedown', (e) => {
-//     isDown3 = true;
-//     slider3.classList.add('act');
-//     startX2 = e.pageX - slider3.offsetLeft;
-//     scrollLeft2 = slider3.scrollLeft;
-// });
-// slider3.addEventListener('mouseleave', () => {
-//     isDown3 = false;
-//     slider3.classList.remove('act');
-// });
-// slider3.addEventListener('mouseup', () => {
-//     isDown3 = false;
-//     slider3.classList.remove('act');
-// });
-// slider3.addEventListener('mousemove', (e) => {
-//     if (!isDown3) return;
-//     e.preventDefault();
-//     const x = e.pageX - slider3.offsetLeft;
-//     const walk = (x - startX2) * 1.5; //scroll-fast
-//     slider3.scrollLeft = scrollLeft2 - walk;
-//     // console.log(walk);
-// });
+slider3.addEventListener('mousedown', (e) => {
+    isDown3 = true;
+    slider3.classList.add('act');
+    startX2 = e.pageX - slider3.offsetLeft;
+    scrollLeft2 = slider3.scrollLeft;
+});
+slider3.addEventListener('mouseleave', () => {
+    isDown3 = false;
+    slider3.classList.remove('act');
+});
+slider3.addEventListener('mouseup', () => {
+    isDown3 = false;
+    slider3.classList.remove('act');
+});
+slider3.addEventListener('mousemove', (e) => {
+    if (!isDown3) return;
+    e.preventDefault();
+    const x = e.pageX - slider3.offsetLeft;
+    const walk = (x - startX2) * 1.5; //scroll-fast
+    slider3.scrollLeft = scrollLeft2 - walk;
+    // console.log(walk);
+});
 const slider4 = document.querySelector('.slider-popular2');
 let isDown4 = false;
 let startY2;
@@ -158,6 +164,8 @@ const action = document.querySelectorAll(".action");
 const actionTagP = document.querySelectorAll(".count")
 const actionImg = document.querySelectorAll(".action img");
 const actionSpan = document.querySelectorAll(".action span");
+const btnRead = document.querySelectorAll(".btn-read");
+
 
 
 
@@ -174,6 +182,8 @@ listView.addEventListener("click", (e) => {
     comingBodyCont.style.whiteSpace = "normal";
     comingBodyCont.classList.remove("slider");
     comingBodyCont.classList.add("slider2");
+    upArrow.classList.remove("visibility");
+    downArrow.classList.remove("visibility");
     [].forEach.call(itemRating, function(el){
         el.classList.remove("visibility");
     });
@@ -234,6 +244,10 @@ listView.addEventListener("click", (e) => {
     [].forEach.call(actionSpan, function(el) {
         el.classList.remove("visibility"); 
     });
+    [].forEach.call(btnRead, function(el) {
+        el.classList.remove("visibility"); 
+    });
+
 });
 cardView.addEventListener("click", (e) => {
     listView.classList.remove("active-view");
@@ -247,6 +261,8 @@ cardView.addEventListener("click", (e) => {
     comingBodyCont.style.paddingRight = "20px";
     comingBodyCont.style.whiteSpace= "nowrap";
     comingBodyCont.classList.add("slider");
+    upArrow.classList.add("visibility");
+    downArrow.classList.add("visibility");
     [].forEach.call(itemRating, function(el){
         el.classList.add("visibility");
     });
@@ -308,8 +324,190 @@ cardView.addEventListener("click", (e) => {
     [].forEach.call(actionSpan, function(el) {
         el.classList.add("visibility");        
     });
+    [].forEach.call(btnRead, function(el) {
+        el.classList.add("visibility");        
+    });
 
 });
 
 //change view for most popular
+const cardViewPop = document.querySelector(".popular-card");
+const listViewPop = document.querySelector(".popular-list");
+const popBody = document.querySelector(".popular-body");
+const contPopBody = document.querySelector(".popular-body .container");
+const popItem = document.querySelectorAll(".pop-item");
+const popRating = document.querySelectorAll(".pop-item__rating");
+const popItemDesc = document.querySelectorAll(".pop-item-desc");
+const popDesc = document.querySelectorAll(".pop-desc");
+const btnReadMore = document.querySelectorAll(".btn-readmore");
+const popImg = document.querySelectorAll(".pop-img");
+const popItemImg = document.querySelectorAll(".pop-item__img");
+const popTitle = document.querySelectorAll(".pop-title");
+const popYear = document.querySelectorAll(".pop-year");
+const popYearSpan = document.querySelectorAll(".pop-year span");
+const popActionCount = document.querySelectorAll(".pop-count");
+const popAspan = document.querySelectorAll(".pop-actions a span");
+const popActionImg = document.querySelectorAll(".pop-actions a img");
+const popActionA = document.querySelectorAll(".pop-actions a");
 
+const popAction = document.querySelectorAll(".pop-actions");
+
+
+cardViewPop.addEventListener("click", (e) => {
+    listViewPop.classList.remove("active-view");
+    cardViewPop.classList.add("active-view");
+    popBody.style.paddingTop = "16px";
+    popBody.style.paddingBottom = "16px";
+    contPopBody.style.flexDirection="row";
+    contPopBody.style.height="auto";
+    contPopBody.style.width="100%";
+    contPopBody.style.paddingLeft="40px";
+    contPopBody.style.paddingRight="20px";
+   
+
+    [].forEach.call(popItem, function(el){
+        el.style.marginBottom = "0px";
+        el.style.marginRight = "135px";
+    });
+    [].forEach.call(popItemImg, function(el){
+        el.style.position="absolute";
+    });
+    [].forEach.call(popImg, function(el){
+        el.classList.remove("pop-img");
+        el.classList.add("movie-img");
+    });
+    [].forEach.call(popTitle, function(el) {
+        el.classList.add("item__title");
+        el.classList.remove("pop-title");
+        el.style.color="#010b13";
+        // el.style.position="static";
+        // el.style.marginTop="0";
+    });
+    [].forEach.call(popYear, function(el) {
+        el.classList.add("item__year");
+        el.classList.remove("pop-year");
+        el.style.color="#010b13";
+        el.style.marginBottom="350px";
+
+    });
+    [].forEach.call(popYearSpan, function(el) {
+        el.style.display="none";      
+    });
+    [].forEach.call(popRating, function(el) {
+        el.style.display="none";      
+    });
+    [].forEach.call(popItem, function(el) {
+        el.style.width="220px";      
+    });
+    [].forEach.call(popItemDesc, function(el) {
+        el.style.width="220px";  
+        // el.style.position="absolute";  
+            
+    });
+    [].forEach.call(popDesc, function(el) {
+        el.style.display="none";      
+    });
+    [].forEach.call(popActionCount, function(el) {
+        el.classList.remove("pop-count");     
+        el.classList.add("count");     
+    });
+    [].forEach.call(popAspan, function(el) {
+        el.style.display="none";    
+    });
+    [].forEach.call(popActionImg, function(el) {
+        el.style.width="20px";  
+        el.style.height="20px";    
+    });
+    [].forEach.call(popActionA, function(el) {
+        el.style.flexDirection = "column";    
+        el.style.marginRight = "28px";    
+    });
+    [].forEach.call(popAction, function(el) {
+        el.style.alignItems= "flex-end";  
+        el.style.paddingLeft="10px";
+        el.style.paddingRight="10px";
+    el.style.justifyContent= "space-between";
+    el.style.paddingTop= "5px";
+    });
+
+    [].forEach.call(btnReadMore, function(el) {
+        el.style.display="none";      
+    });
+});
+listViewPop.addEventListener("click", (e) => {
+    listViewPop.classList.add("active-view");
+    cardViewPop.classList.remove("active-view");
+    popBody.style.paddingTop = "35px";
+    popBody.style.paddingBottom = "0px";
+    contPopBody.style.flexDirection="column";
+    contPopBody.style.height="630px";
+    contPopBody.style.width="1140px";
+    contPopBody.style.paddingLeft="0px";
+    contPopBody.style.paddingRight="0px";
+    [].forEach.call(popItem, function(el){
+        el.style.marginBottom = "60px";
+        el.style.marginRight = "0px";
+    });
+    [].forEach.call(popItemImg, function(el){
+        el.style.position="static";
+    });
+    [].forEach.call(popImg, function(el){
+        el.classList.add("pop-img");
+        el.classList.remove("movie-img");
+    });
+    [].forEach.call(popTitle, function(el) {
+        el.classList.remove("item__title");
+        el.classList.add("pop-title");
+        el.style.color="#389ef2";
+        // el.style.position="static";
+        // el.style.marginTop="0";
+    });
+    [].forEach.call(popYear, function(el) {
+        el.classList.remove("item__year");
+        el.classList.add("pop-year");
+        el.style.marginBottom="15px";
+    });
+    [].forEach.call(popYearSpan, function(el) {
+        el.style.display="inline-block";         
+    });
+    [].forEach.call(popRating, function(el) {
+        el.style.display="block";         
+    });
+    [].forEach.call(popItem, function(el) {
+        el.style.width="auto";      
+    });
+    [].forEach.call(popItemDesc, function(el) {
+        el.style.width="840px";   
+        el.style.position="static";     
+    });
+    [].forEach.call(popDesc, function(el) {
+        el.style.display="block";     
+    });
+    [].forEach.call(popActionCount, function(el) {
+        el.classList.add("pop-count");     
+        el.classList.remove("count");     
+    });
+    [].forEach.call(popAspan, function(el) {
+        el.style.display="block";    
+    });
+    [].forEach.call(popActionImg, function(el) {
+        el.style.width="24px";  
+        el.style.height="auto";    
+    });
+    [].forEach.call(popActionA, function(el) {
+        el.style.flexDirection = "row";  
+        el.style.marginRight = "28px";   
+         
+    });
+    [].forEach.call(popAction, function(el) {
+        el.style.alignItems= "center";  
+        el.style.paddingLeft="0px";
+        el.style.paddingRight="0px";
+    el.style.justifyContent= "space-between";
+    el.style.paddingTop= "0px";
+    });
+
+    [].forEach.call(btnReadMore, function(el) {
+        el.style.display="block";     
+    });
+});
