@@ -306,20 +306,14 @@ header {
   display: -ms-flexbox;
   display: flex;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
   white-space: nowrap;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
   position: relative;
-  -webkit-transform: scale(0.995);
-          transform: scale(0.995);
 }
 
 .act {
   cursor: -webkit-grabbing !important;
   cursor: grabbing !important;
-  -webkit-transform: scale(1) !important;
-          transform: scale(1) !important;
 }
 
 .item {
@@ -392,7 +386,8 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 9px;
-  padding: 0 9px;
+  padding-left: 9px;
+  padding-right: 15px;
 }
 
 .action {
@@ -443,7 +438,7 @@ header {
 
 .popular-body {
   background: #fafafa;
-  padding-top: 42px;
+  padding-top: 35px;
 }
 
 .popular-body .container {
@@ -454,6 +449,11 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 630px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .pop-item {
@@ -468,7 +468,7 @@ header {
 }
 
 .pop-item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
 .pop-item__rating,
@@ -598,56 +598,6 @@ header {
 .btn-readmore:hover {
   color: #f33232 !important;
   border-bottom: 1px solid #f33232;
-}
-
-.slick-prev {
-  border: none;
-  background: transparent;
-  position: absolute;
-  right: 0px;
-  top: 0;
-  bottom: 0;
-  width: 0px;
-  height: 0px;
-  font-size: 0;
-  outline: none;
-}
-
-.slick-prev:before {
-  content: url("../img/verticali-slider-arrows.svg");
-  display: block;
-  width: 26px;
-  height: 9px;
-  position: relative;
-  left: -6px;
-  bottom: 5px;
-  cursor: pointer;
-}
-
-.slick-next {
-  position: absolute;
-  font-size: 0;
-  border: none;
-  background: none;
-  right: 0;
-  bottom: 55px;
-  margin-top: auto;
-  width: 0;
-  height: 0;
-  outline: none;
-}
-
-.slick-next:after {
-  content: url("../img/verticali-slider-arrows.svg");
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  display: block;
-  width: 26px;
-  height: 9px;
-  position: relative;
-  cursor: pointer;
-  left: -6px;
-  bottom: 5px;
 }
 
 .footer {
