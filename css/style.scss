@@ -22,9 +22,10 @@
   font-weight: normal;
   font-style: normal;
 }
-
+//colors
 $hover-effect: rgb(243, 50, 50);
 $main-color: #010b13;
+
 body {
   width: 1364px;
   font-family: "Roboto Condensed";
@@ -222,30 +223,25 @@ header {
     margin-right: 0;
   }
 }
+.testing{
+  width: 80px;
+}
+//active items
 .active-view {
   opacity: 1;
 }
-.coming-body {
-  // padding: 16px 0;
-  background: #fafafa;
-  margin: 0 auto;
-  // padding-left: 50px;
-  .container {
-    width: 100%;
-    padding-left: 40px;
-    padding-right: 20px;
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    white-space: nowrap;
-    position: relative;
-    // will-change: transform;
-  }
-}
-
 .act {
   cursor: grabbing !important;
-  // transform: scale(1) !important;
+}
+.active {
+  background: #fafafa;
+  color: $main-color;
+}
+
+
+.coming-body {
+  background: #fafafa;
+  margin: 0 auto;
 }
 .item {
   display: flex;
@@ -254,10 +250,6 @@ header {
   max-width: 220px;
   margin-right: 135px;
   outline: none;
-  // cursor: pointer;
-  // &:last-child {
-  //   margin-right: 0;
-  // }
 }
 .item__title,
 .item__year {
@@ -278,8 +270,10 @@ header {
     width: 37px;
     top: 18px;
     left: 10px;
-    // filter: none;
     z-index: 9999;
+  }
+  .brightness{
+    filter: brightness(3.3) !important;
   }
   .movie-gradeless {
     left: auto;
@@ -296,7 +290,7 @@ header {
   height: 330px;
   border-radius: 7px;
   transition: 0.5s ease;
-  filter: brightness(50%);
+  filter: brightness(70%);
   &:hover {
     filter: brightness(100%);
   }
@@ -306,12 +300,12 @@ header {
   align-items: flex-end;
   justify-content: space-between;
   margin-top: 9px;
-  // margin-left: 10px;
+ 
   padding-left: 9px;
   padding-right: 15px;
 }
 .action {
-  // margin-right: 28px;
+  
   color: $main-color;
   transition: 0.3s ease;
   display: flex;
@@ -343,24 +337,8 @@ header {
 
 .popular-body {
   background: #fafafa;
-  // padding-top: 35px;
-  .container {
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    // white-space: nowrap;
-    height: 630px;
-    transition: all 0.2s;
-    // transform: scale(0.995);
-    // position: relative;
-    &::-webkit-scrollbar {
-      // background-color:red;
-      // width: 0px;
-    }
-  }
 }
-.test {
+.content-list-view {
   margin-left: auto;
   margin-right: auto;
   width: 1140px;
@@ -371,7 +349,7 @@ header {
   background: #fafafa;
   padding-top:15px ;
 }
-.test2{
+.content-card-view{
   width: 100%;
   display: flex;
   padding: 15px 0px 15px 42px;
