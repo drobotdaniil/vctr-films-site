@@ -268,17 +268,16 @@ header {
 }
 .item__img {
   position: relative;
-  border-radius: 3px;
   transition: 0.4s ease;
-  &:hover {
-    filter: brightness(50%);
-  }
+
   .movie-type,
   .movie-gradeless {
     position: absolute;
     width: 37px;
     top: 18px;
     left: 10px;
+    // filter: none;
+    z-index: 9999;
   }
   .movie-gradeless {
     left: auto;
@@ -293,6 +292,12 @@ header {
   margin-right: auto;
   width: 215px;
   height: 330px;
+  border-radius: 7px;
+  transition: 0.5s ease;
+    filter: brightness(50%);
+    &:hover{
+      filter: brightness(100%);
+    }
 }
 .item__actions {
   display: flex;
@@ -330,6 +335,7 @@ header {
   font-family: "Proxima Nova";
   font-size: 13px;
   margin-bottom: 14px;
+  user-select: none;
 }
 // most popular section
 .popular {
@@ -382,6 +388,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  user-select: none;
 }
 .pop-img {
   width: 104px;
@@ -417,10 +424,14 @@ header {
   margin-bottom: 21px;
   text-align: justify;
   line-height: 1.13;
+  user-select: none;
   //if scroll is needed
 
-  // overflow: auto;
-  // height: 57px;
+  overflow: hidden;
+  height: 57px;
+  &::-webkit-scrollbar{
+    width: 1px;
+  }
 }
 .item-desc {
   width: 840px;
@@ -429,7 +440,7 @@ header {
 .pop-actions {
   display: flex;
 }
-.pop-actions a {
+.pop-actions div {
   display: flex;
   align-items: center;
   color: $main-color;
@@ -444,6 +455,7 @@ header {
   span {
     margin: 0 7px;
     color: $main-color;
+    user-select: none;
   }
   img {
     width: 24px;
@@ -455,6 +467,7 @@ header {
   font-weight: 700;
   transition: 0.4s ease;
   padding-top: 2px;
+  user-select: none;
   &:hover {
     color: $hover-effect;
   }
@@ -464,7 +477,8 @@ header {
   font-size: 18px;
   font-weight: 700;
   color: #389ef2 !important;
-  margin-left: 405px;
+  position: absolute;
+  right: 75px;
   transition: 0.4s ease !important;
   &:hover {
     color: $hover-effect !important;
