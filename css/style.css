@@ -214,6 +214,8 @@ header {
 .popular {
   background: #010b13;
   color: #fafafa;
+  z-index: 99999;
+  position: relative;
 }
 
 .coming-header .container {
@@ -294,8 +296,8 @@ header {
 }
 
 .coming-body {
-  padding: 16px 0;
   background: #fafafa;
+  margin: 0 auto;
 }
 
 .coming-body .container {
@@ -439,14 +441,8 @@ header {
           user-select: none;
 }
 
-.popular {
-  z-index: 99999;
-  position: relative;
-}
-
 .popular-body {
   background: #fafafa;
-  padding-top: 35px;
 }
 
 .popular-body .container {
@@ -464,6 +460,33 @@ header {
   transition: all 0.2s;
 }
 
+.test {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  height: 630px;
+  background: #fafafa;
+  padding-top: 15px;
+}
+
+.test2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px 0px 15px 42px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .pop-item {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -477,7 +500,7 @@ header {
 }
 
 .pop-item:last-child {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .pop-item__rating,
@@ -659,7 +682,8 @@ header {
   width: 26px;
   height: 9px;
   position: relative;
-  top: 5px;
+  z-index: 9999;
+  top: 25px;
   left: 1230px;
   cursor: pointer !important;
 }
@@ -739,6 +763,10 @@ header {
   top: 40px;
   left: -80px;
   overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .footer-logo-right {

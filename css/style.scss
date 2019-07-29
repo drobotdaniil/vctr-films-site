@@ -170,6 +170,8 @@ header {
 .popular {
   background: $main-color;
   color: #fafafa;
+  z-index: 99999;
+  position: relative;
 }
 .coming-header .container {
   display: flex;
@@ -224,9 +226,9 @@ header {
   opacity: 1;
 }
 .coming-body {
-  padding: 16px 0;
+  // padding: 16px 0;
   background: #fafafa;
-  // margin: 0 auto;
+  margin: 0 auto;
   // padding-left: 50px;
   .container {
     width: 100%;
@@ -294,10 +296,10 @@ header {
   height: 330px;
   border-radius: 7px;
   transition: 0.5s ease;
-    filter: brightness(50%);
-    &:hover{
-      filter: brightness(100%);
-    }
+  filter: brightness(50%);
+  &:hover {
+    filter: brightness(100%);
+  }
 }
 .item__actions {
   display: flex;
@@ -338,13 +340,10 @@ header {
   user-select: none;
 }
 // most popular section
-.popular {
-  z-index: 99999;
-  position: relative;
-}
+
 .popular-body {
   background: #fafafa;
-  padding-top: 35px;
+  // padding-top: 35px;
   .container {
     display: flex;
     flex-direction: column;
@@ -361,6 +360,24 @@ header {
     }
   }
 }
+.test {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1140px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 630px;
+  background: #fafafa;
+  padding-top:15px ;
+}
+.test2{
+  width: 100%;
+  display: flex;
+  padding: 15px 0px 15px 42px;
+  overflow: hidden;
+  white-space: nowrap;
+}
 .pop-item {
   display: flex !important;
   align-items: center;
@@ -368,7 +385,7 @@ header {
   outline: none;
   position: relative;
   &:last-child {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 .pop-item__rating,
@@ -429,7 +446,7 @@ header {
 
   overflow: hidden;
   height: 57px;
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     width: 1px;
   }
 }
@@ -498,26 +515,6 @@ header {
     border-bottom: 1px solid $hover-effect;
   }
 }
-
-// .slider-coming2::before{
-//   content: url("../img/verticali-slider-arrows.svg");
-//   display: block;
-//   width: 26px;
-//   height: 9px;
-//   position: absolute;
-//   cursor: pointer;
-//   right: -1110px;
-// }
-// .slider-coming2::after{
-//   content: url("../img/verticali-slider-arrows.svg");
-//   display: block;
-//   width: 26px;
-//   height: 9px;
-//   position: absolute;
-//   cursor: pointer;
-//   right: -1110px;
-//   transform: rotate(180deg);
-// }
 .up-arrow,
 .down-arrow,
 .up-arrow-pop,
@@ -525,7 +522,8 @@ header {
   width: 26px;
   height: 9px;
   position: relative;
-  top: 5px;
+  z-index: 9999;
+  top: 25px;
   left: 1230px;
   cursor: pointer !important;
 }
@@ -536,59 +534,10 @@ header {
   transform: rotate(180deg);
 }
 
-.down-arrow-pop{
+.down-arrow-pop {
   bottom: 50px;
 }
-// //arrows
-// .slick-prev {
-//   border: none;
-//   background: transparent;
-//   position: absolute;
-//   right: 0px;
-//   top: 0;
-//   bottom: 0;
-//   width: 0px;
-//   height: 0px;
-//   font-size: 0;
-//   outline: none;
-// }
-// .slick-prev:before {
-//   content: url("../img/verticali-slider-arrows.svg");
-//   display: block;
-//   width: 26px;
-//   height: 9px;
-//   position: relative;
-//   left: -6px;
-//   bottom: 5px;
-//   cursor: pointer;
-//   // outline: none !important; ????
 
-// }
-// .slick-next {
-//   position: absolute;
-//   font-size: 0;
-//   border: none;
-//   background: none;
-//   right: 0;
-//   bottom: 55px;
-//   margin-top: auto;
-//   // margin-bottom: auto;
-//   width: 0;
-//   height: 0;
-//   outline: none;
-// }
-// .slick-next:after {
-//   content: url("../img/verticali-slider-arrows.svg");
-//   transform: rotate(180deg);
-//   display: block;
-//   width: 26px;
-//   height: 9px;
-//   position: relative;
-//   cursor: pointer;
-//   left: -6px;
-//   bottom: 5px;
-
-// }
 //foooter
 .footer {
   background: $main-color;
@@ -641,6 +590,7 @@ header {
   top: 40px;
   left: -80px;
   overflow: hidden;
+  user-select: none;
 }
 
 .footer-logo-right {
