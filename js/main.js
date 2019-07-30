@@ -3,6 +3,8 @@ const cardViewComing = document.querySelector(".card-view");
 const listViewComing = document.querySelector(".list-view");
 const cardViewPopular = document.querySelector(".popular-card");
 const listViewPopular = document.querySelector(".popular-list");
+const playerPopular = document.querySelector(".playerPopular");
+const playerComing = document.querySelector(".playerComing");
 
 //functions for sliders
 function SlideHorizontalComing() {
@@ -144,14 +146,18 @@ function ListViewComingSoon() {
             let rank = val.rank || 0 || val.expectations_count || "0";
             output += '<div class="pop-item">';
             output += '<div class="pop-item__img">';
+            output += '<button><img src="img/play-button.svg" alt="play"></button>';
             output += '<img class="pop-img" src="' + val.poster + '" alt="' + val.title + '">';
             output += '</div>';
             output += '<div class="pop-item__rating">';
             output += '<p class="rating">' + rank + '</p>';
             if (val.rank === undefined) {
+
+                output += '<p class="rating silver">' + rank + '</p>';
                 output += '<img class="testing" src="img/gradeless.svg" alt="testing">';
             } else {
                 output += '<img src="img/rating.png" alt="rating">';
+                output += '<p class="rating">' + rank + '</p>';
             }
             output += '</div>';
             output += '<div class="pop-item-desc">';
@@ -187,6 +193,10 @@ function ListViewComingSoon() {
         output += "</div>";
         output += '<img class="down-arrow-pop" src="img/verticali-slider-arrows.svg">'
         $(".coming-body").html(output);
+        const btnPlay = document.querySelectorAll(".pop-item__img button");
+        [].forEach.call(btnPlay, function (el) {
+            el.addEventListener("click", createPlayerComing);
+        });
     }).then(SlideVerticalComing);
 }
 function CardViewComingSoon() {
@@ -199,6 +209,7 @@ function CardViewComingSoon() {
             output += '<h3 class="item__title">' + val.title + '</h3>';
             output += '<h3 class="item__year">' + val.year + '</h3>';
             output += '<div class="item__img">';
+            output += '<button><img src="img/play-button.svg" alt="play"></button>';
             if (val.type == "Movie") {
                 output += '<img class="movie-type" src="img/movie-type.svg" alt="movie">';
             } else {
@@ -229,25 +240,34 @@ function CardViewComingSoon() {
         });
         output += '</div>';
         $('.coming-body').html(output);
-
+        const btnPlay = document.querySelectorAll(".item__img button");
+        [].forEach.call(btnPlay, function (el) {
+            el.addEventListener("click", createPlayerComing);
+        });
     }).then(SlideHorizontalComing);
 }
 function ListViewMostPopular() {
     $.getJSON("data.json", function (data) {
+
         let output = '<img class="up-arrow-pop" src="img/verticali-slider-arrows.svg">';
+
         output += '<div class="content-list-view slider-popular">';
         $.each(data, function (key, val) {
             let rank = val.rank || 0 || val.expectations_count || "0";
             output += '<div class="pop-item">';
             output += '<div class="pop-item__img">';
+            output += '<button><img src="img/play-button.svg" alt="play"></button>';
             output += '<img class="pop-img" src="' + val.poster + '" alt="' + val.title + '">';
             output += '</div>';
             output += '<div class="pop-item__rating">';
-            output += '<p class="rating">' + rank + '</p>';
+
             if (val.rank === undefined) {
+
+                output += '<p class="rating silver">' + rank + '</p>';
                 output += '<img class="testing" src="img/gradeless.svg" alt="testing">';
             } else {
                 output += '<img src="img/rating.png" alt="rating">';
+                output += '<p class="rating">' + rank + '</p>';
             }
             output += '</div>';
             output += '<div class="pop-item-desc">';
@@ -281,8 +301,14 @@ function ListViewMostPopular() {
             output += '</div>';
         });
         output += "</div>";
+
+
         output += '<img class="down-arrow-pop" src="img/verticali-slider-arrows.svg">'
         $(".popular-body").html(output);
+        const btnPlay = document.querySelectorAll(".pop-item__img button");
+        [].forEach.call(btnPlay, function (el) {
+            el.addEventListener("click", createPlayerPopular);
+        });
     }).then(SlideVerticalPopular);
 }
 function CardViewMostPopular() {
@@ -294,6 +320,7 @@ function CardViewMostPopular() {
             output += '<h3 class="item__title">' + val.title + '</h3>';
             output += '<h3 class="item__year">' + val.year + '</h3>';
             output += '<div class="item__img">';
+            output += '<button><img src="img/play-button.svg" alt="play"></button>';
             if (val.type == "Movie") {
                 output += '<img class="movie-type" src="img/movie-type.svg" alt="movie">';
             } else {
@@ -323,14 +350,153 @@ function CardViewMostPopular() {
         });
         output += '</div>';
         $('.popular-body').html(output);
-
+        const btnPlay = document.querySelectorAll(".item__img button");
+        [].forEach.call(btnPlay, function (el) {
+            el.addEventListener("click", createPlayerPopular);
+        });
     }).then(SlideHorizontalPopular);
 }
+const all = document.querySelector(".all");
+const movie = document.querySelector(".movie");
+const tvShow = document.querySelector(".tv-show");
+movie.addEventListener("click", (e) => {
+    $.getJSON("data.json", function (data) {
+        let output = '<div class="content-card-view slider-popular2">';
+        $.each(data, function (key, val) {
+            let rank = val.rank || 0 || val.expectations_count || "0";
+            if (val.type == "Movie") {
+                output += '<div class="item">';
+                output += '<h3 class="item__title">' + val.title + '</h3>';
+                output += '<h3 class="item__year">' + val.year + '</h3>';
+                output += '<div class="item__img">';
+                output += '<button><img src="img/play-button.svg" alt="play"></button>';
+                if (val.type == "Movie") {
+                    output += '<img class="movie-type" src="img/movie-type.svg" alt="movie">';
+                } else {
+                    output += '<img class="movie-type brightness" src="img/tv-show-type.svg" alt="tv-show">';
+                }
+                output += '<img class="movie-gradeless" src="img/gradeless-2.svg" alt="gradeless">';
+                output += '<img class="movie-img" src="' + val.poster + '" alt="' + val.title + '">';
+                output += '</div>';
+                output += '<div class="item__actions">';
+                output += '<div class="action">';
+                output += '<img src="img/share.svg" alt="share">';
+                output += '</div>';
+                output += '<div class="action">';
+                output += '<p class="count">' + val.comments_count + '</p>';
+                output += '<img src="img/comment.svg" alt="comment">';
+                output += '</div>';
+                output += '<div class="action">';
+                output += '<p class="count">' + rank + '</p>';
+                output += '<img src="img/gradeless.svg" alt="gradeless">';
+                output += '</div>';
+                output += '<div class="action">';
+                output += '<p class="count">' + val.likes_count + '</p>';
+                output += '<img src="img/heart.svg" alt="heart">';
+                output += '</div>';
+                output += '</div>';
+                output += '</div>';
+                all.classList.remove("active");
+                tvShow.classList.remove("active");
+                movie.classList.add("active");
+            } 
+            });
 
+        output += '</div>';
+        $('.popular-body').html(output);
+
+        const btnPlay = document.querySelectorAll(".item__img button");
+        [].forEach.call(btnPlay, function (el) {
+            el.addEventListener("click", createPlayerPopular);
+        });
+    }).then(SlideHorizontalPopular);
+});
+tvShow.addEventListener("click", (e) => {
+    $.getJSON("data.json", function (data) {
+        let output = '<div class="content-card-view slider-popular2">';
+        $.each(data, function (key, val) {
+            let rank = val.rank || 0 || val.expectations_count || "0";
+            if (val.type == "TV-Show") {
+                output += '<div class="item">';
+                output += '<h3 class="item__title">' + val.title + '</h3>';
+                output += '<h3 class="item__year">' + val.year + '</h3>';
+                output += '<div class="item__img">';
+                output += '<button><img src="img/play-button.svg" alt="play"></button>';
+                if (val.type == "Movie") {
+                    output += '<img class="movie-type" src="img/movie-type.svg" alt="movie">';
+                } else {
+                    output += '<img class="movie-type brightness" src="img/tv-show-type.svg" alt="tv-show">';
+                }
+                output += '<img class="movie-gradeless" src="img/gradeless-2.svg" alt="gradeless">';
+                output += '<img class="movie-img" src="' + val.poster + '" alt="' + val.title + '">';
+                output += '</div>';
+                output += '<div class="item__actions">';
+                output += '<div class="action">';
+                output += '<img src="img/share.svg" alt="share">';
+                output += '</div>';
+                output += '<div class="action">';
+                output += '<p class="count">' + val.comments_count + '</p>';
+                output += '<img src="img/comment.svg" alt="comment">';
+                output += '</div>';
+                output += '<div class="action">';
+                output += '<p class="count">' + rank + '</p>';
+                output += '<img src="img/gradeless.svg" alt="gradeless">';
+                output += '</div>';
+                output += '<div class="action">';
+                output += '<p class="count">' + val.likes_count + '</p>';
+                output += '<img src="img/heart.svg" alt="heart">';
+                output += '</div>';
+                output += '</div>';
+                output += '</div>';
+                movie.classList.remove("active");
+                all.classList.remove("active");
+                tvShow.classList.add("active");
+            } 
+            });
+
+        output += '</div>';
+        $('.popular-body').html(output);
+
+        const btnPlay = document.querySelectorAll(".item__img button");
+        [].forEach.call(btnPlay, function (el) {
+            el.addEventListener("click", createPlayerPopular);
+        });
+    }).then(SlideHorizontalPopular);
+});
+
+
+
+
+
+///need to fix this function!!!
+// function createPlayerPopular() {
+//     $.getJSON("data.json", function(data){
+//         let output = '<span class="closeBtn">&times;</span>'; 
+//         output +='<iframe width="100%" height="500" src="' + data[0].iframe +'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'; 
+//         $(".playerPopular").html(output);
+//         const closeBtn = document.querySelector(".playerPopular .closeBtn");
+//         closeBtn.addEventListener("click", closePlayerPopular);
+//     });
+// }
+function createPlayerPopular() {
+    playerPopular.innerHTML = '<span class="closeBtn">&times;</span> <iframe width="100%" height="500" src="https://www.youtube.com/embed/7TavVZMewpY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    const closeBtn = document.querySelector(".playerPopular .closeBtn");
+    closeBtn.addEventListener("click", closePlayerPopular);
+}
+function createPlayerComing() {
+    playerComing.innerHTML = '<span class="closeBtn">&times;</span> <iframe width="100%" height="500" src="https://www.youtube.com/embed/7TavVZMewpY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    const closeBtn = document.querySelector(".playerComing .closeBtn");
+    closeBtn.addEventListener("click", closePlayerComing);
+}
+function closePlayerPopular() {
+    playerPopular.innerHTML = "";
+}
+function closePlayerComing() {
+    playerComing.innerHTML = "";
+}
 //run
 CardViewComingSoon();
 ListViewMostPopular();
-
 //events
 listViewComing.addEventListener("click", (e) => {
     ListViewComingSoon();
